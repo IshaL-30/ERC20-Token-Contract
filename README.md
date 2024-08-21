@@ -11,101 +11,101 @@ This repository contains the implementation of the `MyToken` ERC-20 token smart 
 
 ## Contract Overview
 
-### 1. Constructor
-
-```solidity
-constructor(string memory name, string memory symbol, uint age, address account) ERC20(name, symbol) Ownable(account)
-```
-
-- Initializes the token with a name, symbol, age, and account address for the owner.
-- Mints an initial supply of tokens to the contract deployer (admin).
-- Sets the owner and admin of the contract.
-
-### 2. Owner-Only Functions
-
-#### `updateAccountDetails`
-
-```solidity
-function updateAccountDetails(string memory newName, string memory newUserId, uint newAge, address newAccount) external onlyOwner
-```
-
-- Updates the details of the owner account.
-- Ensures the new account address is valid.
-
-#### `Mint`
-
-```solidity
-function Mint(address receiver, uint256 amount) external onlyOwner
-```
-
-- Mints new tokens to a specified receiver address.
-
-#### `Burn`
-
-```solidity
-function Burn(uint256 amount) external onlyOwner
-```
-
-- Burns a specified amount of tokens from the owner's balance.
-
-#### `Approve`
-
-```solidity
-function Approve(address sender, uint256 amount) external onlyOwner
-```
-
-- Approves a specified amount of tokens for a sender to spend on behalf of the owner.
-- Ensures the sender's address is valid.
-
-#### `TransferTokens`
-
-```solidity
-function TransferTokens(address receiver, uint256 amount) external onlyOwner
-```
-
-- Transfers tokens from the owner to a specified receiver.
-- Ensures the receiver's address is valid.
-
-#### `TransferFrom`
-
-```solidity
-function TransferFrom(address sender, address receiver, uint256 amount) external onlyOwner
-```
-
-- Transfers tokens from a sender to a receiver, ensuring both addresses are valid.
-
-### 3. Overridden ERC-20 Function
-
-#### `decimals`
-
-```solidity
-function decimals() public view virtual override returns (uint8)
-```
-
-- Specifies the token to use 5 decimal places.
+  ### 1. Constructor
+  
+  ```solidity
+  constructor(string memory name, string memory symbol, uint age, address account) ERC20(name, symbol) Ownable(account)
+  ```
+  
+  - Initializes the token with a name, symbol, age, and account address for the owner.
+  - Mints an initial supply of tokens to the contract deployer (admin).
+  - Sets the owner and admin of the contract.
+  
+  ### 2. Owner-Only Functions
+  
+  #### `updateAccountDetails`
+  
+  ```solidity
+  function updateAccountDetails(string memory newName, string memory newUserId, uint newAge, address newAccount) external onlyOwner
+  ```
+  
+  - Updates the details of the owner account.
+  - Ensures the new account address is valid.
+  
+  #### `Mint`
+  
+  ```solidity
+  function Mint(address receiver, uint256 amount) external onlyOwner
+  ```
+  
+  - Mints new tokens to a specified receiver address.
+  
+  #### `Burn`
+  
+  ```solidity
+  function Burn(uint256 amount) external onlyOwner
+  ```
+  
+  - Burns a specified amount of tokens from the owner's balance.
+  
+  #### `Approve`
+  
+  ```solidity
+  function Approve(address sender, uint256 amount) external onlyOwner
+  ```
+  
+  - Approves a specified amount of tokens for a sender to spend on behalf of the owner.
+  - Ensures the sender's address is valid.
+  
+  #### `TransferTokens`
+  
+  ```solidity
+  function TransferTokens(address receiver, uint256 amount) external onlyOwner
+  ```
+  
+  - Transfers tokens from the owner to a specified receiver.
+  - Ensures the receiver's address is valid.
+  
+  #### `TransferFrom`
+  
+  ```solidity
+  function TransferFrom(address sender, address receiver, uint256 amount) external onlyOwner
+  ```
+  
+  - Transfers tokens from a sender to a receiver, ensuring both addresses are valid.
+  
+  ### 3. Overridden ERC-20 Function
+  
+  #### `decimals`
+  
+  ```solidity
+  function decimals() public view virtual override returns (uint8)
+  ```
+  
+  - Specifies the token to use 5 decimal places.
 
 ## Getting Started
 
 ### Installing
 
-Clone the repository:
-```bash
-git clone https://github.com/IshaL-30/ERC20-Token-Contract.git
-```
+  Clone the repository:
+  ```bash
+  git clone https://github.com/IshaL-30/ERC20-Token-Contract.git
+  ```
 
 ### Executing program
-Navigate to the project directory:
-
-```bash
-cd ERC20-Token-Contract
-```
-
-Compile the Solidity contract using a Solidity compiler:
-
-```bash
-solc MyToken.sol --bin --abi --optimize -o ./build
-```
-Deploy the compiled contract on an Ethereum network using tools like Remix or Hardhat.
+  Navigate to the project directory:
+  
+  ```bash
+  cd ERC20-Token-Contract
+  ```
+  
+  Compile the Solidity contract using a Solidity compiler:
+  
+  ```bash
+  solc MyToken.sol --bin --abi --optimize -o ./build
+  ```
+  Deploy the compiled contract on an Ethereum network using tools like Remix or Hardhat.
 
 ### Interacting with the Contract
 
