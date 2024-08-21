@@ -84,14 +84,28 @@ function decimals() public view virtual override returns (uint8)
 
 - Specifies the token to use 5 decimal places.
 
-## Usage
+## Getting Started
 
-### Deploying the Contract
+### Installing
 
-1. Clone this repository.
-2. Install the necessary dependencies using `npm install`.
-3. Compile the contract using a Solidity compiler.
-4. Deploy the contract on your preferred Ethereum network using tools like Remix, Hardhat, or Truffle.
+Clone the repository:
+```bash
+git clone https://github.com/IshaL-30/ERC20-Token-Contract.git
+```
+
+### Executing program
+Navigate to the project directory:
+
+```bash
+cd ERC20-Token-Contract
+```
+
+Compile the Solidity contract using a Solidity compiler:
+
+```bash
+solc MyToken.sol --bin --abi --optimize -o ./build
+```
+Deploy the compiled contract on an Ethereum network using tools like Remix or Hardhat.
 
 ### Interacting with the Contract
 
