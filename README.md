@@ -106,7 +106,3 @@ function decimals() public view virtual override returns (uint8)
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
----
-
-This `README.md` provides a clear guide to understanding, deploying, and using your `MyToken` smart contract. It outlines the main features, explains the key functions, and offers instructions for deployment and interaction.
