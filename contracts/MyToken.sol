@@ -25,7 +25,7 @@ contract MyToken is ERC20, Ownable {
             accountAddress: account
         });
 
-        Admin = msg.sender;
+        Admin = account;
         _mint(msg.sender, 1 * 10**uint(decimals()));
     }
 
@@ -33,13 +33,15 @@ contract MyToken is ERC20, Ownable {
         return 5;
     }
 
-    function updateAccountDetails(string memory newName, string memory newUserId, uint newAge, address newAccount) external onlyOwner {
+    function addAccount(string memory newName, string memory newUserId, uint newAge, address newAccount) external onlyOwner {
         require(newAccount != address(0), "New account address is invalid");
 
         Account_Details.name = newName;
         Account_Details.userId = newUserId;
         Account_Details.age = newAge;
         Account_Details.accountAddress = newAccount;
+
+        Admin = Account_Details.accountAddress;
     }
 
     function Mint(address receiver, uint256 amount) external onlyOwner {
